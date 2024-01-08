@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Message
+
+@{
+	<form asp-action="Index">
+		<div>
+			<label asp-for="Sender">Emetteur</label>
+			<input asp-for="Sender" />
+			@*asp-for = transmission de parametre a la fonction lors de son appel EN VERSION FORTEMENT TYPE*@
+		</div>
+		<div>
+			<label asp-for="Sender">Contenu</label>
+			<input asp-for="Body" />
+			@*asp-for = transmission de parametre a la fonction lors de son appel EN VERSION FORTEMENT TYPE*@
+		</div>
+		<input asp-for="Date" type="hidden" value="@DateTime.Now"/>
+		<button>Valider</button>
+	</form>
+}
+
+<br />
+<br />
+<a class="btn btn-primary" asp-controller="Exo2Message" asp-action="Index">
+	Retour
+</a>

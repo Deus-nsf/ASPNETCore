@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model List<Message>
+
+@{
+	<div>
+		@foreach (Message message in Model)
+		{
+			<p>@nameof(message.Sender) : @message.Sender</p>
+
+			<p>@nameof(message.Body) : @message.Body</p>
+
+			<p>@nameof(message.Date) : @message.Date</p>
+
+			<a class="btn btn-primary" asp-controller="Exo2Message" asp-action="DetailMessage" asp-route-sender="@message.Sender">Details</a>
+
+			<br />
+			<br />
+			<hr />
+		}
+
+		@foreach (Message message in Model)
+		{
+			<partial name="Exo3VuesPartielles/_Message" model="message" />
+
+			<br />
+			<br />
+			<hr />
+		}
+	</div>
+}
+
+
+<br />
+<br />
+<a class="btn btn-primary" asp-controller="Exo2Message" asp-action="Index">
+	Retour
+</a>

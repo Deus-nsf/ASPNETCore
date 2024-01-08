@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model List<string>
+
+
+<form asp-action="EnvoiListeString">
+	<label>entrez une chaine : </label>
+	<input type="text" name="strings" value="" placeholder="placeholder" />
+	<br />
+
+	<label>entrez une chaine : </label>
+	<input type="text" name="strings" value="" placeholder="placeholder" />
+	<br />
+
+	<label>entrez une chaine : </label>
+	<input type="text" name="strings" value="" placeholder="placeholder" />
+	<br />
+
+	<button>Valider</button>
+</form>
+
+
+<br />
+<a class="btn btn-primary" asp-controller="Exo2Message" asp-action="Index">
+	Retour
+</a>
