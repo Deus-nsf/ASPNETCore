@@ -12,12 +12,14 @@ public class MinMaxRandViewComponent : ViewComponent
 	{
 		int monRandom = RandomNumberGenerator.GetInt32(min, max + 1);
 
-		return View("Default",  
+		MinMaxRandViewModel minMaxRandViewModel =
 			new MinMaxRandViewModel()
-			{ 
+			{
 				Min = min,
 				Max = max,
-				MonRandom = monRandom 
-			});
+				MonRandom = monRandom
+			};
+
+		return View("Default", minMaxRandViewModel);
 	}
 }
