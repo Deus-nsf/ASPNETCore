@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using ASPNETCore.Projet1.Services.Contracts
+<!DOCTYPE html>
 
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
 	<div class="container-fluid">
@@ -13,7 +14,17 @@
 					<a class="nav-link text-dark" asp-area=""
 					   asp-controller="Exo3VuesPartielles"
 					   asp-action="AfficherRandom">
-						Afficher Random Action
+						Afficher <br />
+						Vue Partielle <br />
+						Via une Action
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-dark" asp-area=""
+					   asp-controller="Exo3VuesPartielles"
+					   asp-action="UtiliserServiceDepuisAction">
+						Utiliser Service <br />
+						Depuis Action
 					</a>
 				</li>
 			</ul>
@@ -22,9 +33,12 @@
 </nav>
 
 <div>
-	@*BIEN METTRE DES TIRETS ENTRE CHAQUE MOT DU NOM DU COMPONENT 
+	@*BIEN METTRE DES TIRETS ENTRE CHAQUE MOT DU NOM DU VIEWCOMPONENT
 	(détection PascalCase vers KebabCase) MinMaxRand -> Min-Max-Rand OSKOUR*@
 	<vc:Min-Max-Rand Min="0" Max="100"></vc:Min-Max-Rand>
 	<p></p>
 	<p></p>
+	@*Injection du service dans la vue, pratique mais le service ne peut pas etre remplace ?*@
+	@inject IMinMaxService MinMaxRandService
+	<p>Resultat du service appele depuis la vue : @MinMaxRandService.ProcessNumber(3, 89)</p>
 </div>

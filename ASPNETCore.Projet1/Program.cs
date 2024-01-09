@@ -1,7 +1,12 @@
+using ASPNETCore.Projet1.Services;
+using ASPNETCore.Projet1.Services.Contracts;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<MinMaxRandService>();
+builder.Services.AddTransient<IMinMaxService, MinMaxRandService>();
 
 var app = builder.Build();
 

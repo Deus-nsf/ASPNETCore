@@ -1,0 +1,17 @@
+﻿@model int
+
+<h6>Ma vue pour afficher le resultat du Service</h6>
+
+<hr />
+
+<div>
+	<p> Min : @ViewBag.Min</p>
+	<p> Max : @ViewBag.Max</p>
+	<p> Resultat du Service (Random ou Moyenne) : @Model</p>
+</div>
+
+<br />
+<br />
+<a class="btn btn-primary" asp-controller="Exo3VuesPartielles" asp-action="Index">
+	Retour
+</a>
