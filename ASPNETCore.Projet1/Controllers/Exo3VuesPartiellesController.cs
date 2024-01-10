@@ -61,6 +61,7 @@ public class Exo3VuesPartiellesController : Controller
 
 		ViewBag.Min = min;
 		ViewBag.Max = max;
+		ViewBag.TypeService = _minMaxService.GetType();
 
 		return View(_minMaxService.ProcessNumber(min, max));
 	}
