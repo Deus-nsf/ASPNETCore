@@ -33,7 +33,48 @@
 			<hr />
 		}
 	</div>
+
+	<div>
+		<h5>Affichage des messages depuis une requette AJAJ</h5>
+
+	</div>
 }
+
+<button onclick="refreshMessages()">rafraichir liste messages</button>
+
+
+<script>
+
+	// Ajax Get
+	function refreshMessages() {
+		$.get("/Exo3VuesPartielles/GetAllJson", function (data) {
+			// console.log(data);
+
+			// var content = $('#contentPets');
+
+			// content.empty();
+
+			// for (let pet of data) {
+			//     content.append($('<tr><td>' + pet.name + '</td></tr>'));
+			// }
+
+			$('#divContentPets').html(data);
+		});
+	}
+
+	$(function () {
+		$('#formSearch').submit(function (e) {
+			$.post('/Pet/SearchAjax', { name: $('#searchName').val() }, function (data) {
+				$('#divContentPets').html(data);
+			}
+
+			e.preventDefault();
+		});
+
+	});
+
+
+</script>
 
 
 <br />
