@@ -64,11 +64,11 @@
 
 	$(function () {
 		$('#formSearch').submit(function (e) {
+			e.preventDefault();
+
 			$.post('/Pet/SearchAjax', { name: $('#searchName').val() }, function (data) {
 				$('#divContentPets').html(data);
 			}
-
-			e.preventDefault();
 		});
 
 	});
